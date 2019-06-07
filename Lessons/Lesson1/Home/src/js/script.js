@@ -6,16 +6,14 @@ let employersNames = employers.filter((employers) => {
 employersNames = employersNames.map((item) => item.toLowerCase().trim());
 
 const sponsors = {
-  cash: [40000, 5000, 30400, 12000],
+  cash: [],
   eu: ['SRL', 'PLO', 'J&K'],
   rus: ['RusAuto', 'SBO']
 };
 
 let { eu, eu: [firstName, secondName, thirdName], rus } = sponsors;
 
-const money = sponsors.cash.reduce(function (prevValue, currentValue) {
-  return prevValue + currentValue;
-});
+const money = sponsors.cash.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
 function makeBusiness(owner, director = 'Victor', cash, emp) {
   const sumSponsors = eu.concat(rus, 'unexpected sponsor');
